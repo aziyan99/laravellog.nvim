@@ -1,27 +1,27 @@
 # laravel-log.nvim
 
-A lazygit/lazydocker-style TUI for browsing Laravel logs inside Neovim.
+A TUI for browsing Laravel logs inside Neovim.
 
 Requires Neovim >= 0.10.
 
 ```
-┌ 1 Files ──────────┐┌ 4 Detail ─────────────────────────┐
-│● laravel.log 1 MB ││Level  ERROR                       │
-└───────────────────┘│Time   2026-10-08 10:15:02         │
-┌ 2 Entries (3/120) ┐│Env    local                       │
-│10-08 10:15 ERROR …││────────────────────────────────── │
-│10-08 10:14 INFO  …││Undefined variable $user           │
-└───────────────────┘│[stacktrace]                       │
+┌ 1 Files ──────────┐┌ 4 Detail ──────────────────────────┐
+│● laravel.log 1 MB ││Level  ERROR                        │
+└───────────────────┘│Time   2026-10-08 10:15:02          │
+┌ 2 Entries (3/120) ┐│Env    local                        │
+│10-08 10:15 ERROR …││────────────────────────────────────│
+│10-08 10:14 INFO  …││Undefined variable $user            │
+└───────────────────┘│[stacktrace]                        │
 ┌ 3 Levels ─────────┐│#0 /app/Http/Controllers/Foo.php(12)│
-│[x] ERROR  12      ││#1 /vendor/laravel/framework/...   │
-└───────────────────┘└───────────────────────────────────┘
+│[x] ERROR  12      ││#1 /vendor/laravel/framework/...    │
+└───────────────────┘└────────────────────────────────────┘
 ```
 
 ## Install (lazy.nvim)
 
 ```lua
 {
-  "you/laravel-log.nvim",
+  "you/laravellog.nvim",
   cmd = "LaravelLog",
   keys = { { "<leader>ll", "<cmd>LaravelLog<cr>", desc = "Laravel log" } },
   opts = {},
@@ -43,6 +43,7 @@ Requires Neovim >= 0.10.
 | `<CR>` | detail | jump to `file.php:line` under cursor |
 | `s` | all | toggle newest/oldest first |
 | `y` | all | yank raw entry |
+| `X` | all | clear log |
 | `r` | all | reload |
 | `f` | all | follow mode (auto reload) |
 | `q` | all | quit |
