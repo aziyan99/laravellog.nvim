@@ -1,4 +1,4 @@
-# laravel-log.nvim
+# laravellog.nvim
 
 A TUI for browsing Laravel logs inside Neovim.
 
@@ -21,7 +21,7 @@ Requires Neovim >= 0.10.
 
 ```lua
 {
-  "you/laravellog.nvim",
+  "aziyan99/laravellog.nvim",
   cmd = "LaravelLog",
   keys = { { "<leader>ll", "<cmd>LaravelLog<cr>", desc = "Laravel log" } },
   opts = {},
